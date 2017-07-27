@@ -16,10 +16,22 @@
 		<script>
 			function poke(){
 				for(var i = 1; i <= 151; i++){
-					$("#pokelab").append("<img id = '" + i + "' src='http://pokeapi.co/media/img/" + i +".png'>"); 
+					$("#pokelab").append("<img id = '" + i + "' src='http://pokeapi.co/media/img/" + i +".png'>") 
 					}
 				}
+
 			poke();
-		</script>
+
+			$("img").click(function(){
+
+				var x = $(this).attr("id");
+
+
+				$.get("http://pokeapi.co/api/v1/pokemon/" +x+ "/", function(res) {
+                    console.log(res);
+                }, "json");
+
+			});	
+        </script>
 	</body>
 </html>
