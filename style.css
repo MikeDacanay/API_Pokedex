@@ -1,0 +1,12 @@
+#pokelab {
+	width: 1400px; 
+	display: inline-block;
+}
+#pokedex {
+	height: 600px; 
+	width: 200px; 
+	display: inline-block;
+	border: 5px solid red;
+	position: fixed;
+	margin-top: 220px;
+}
