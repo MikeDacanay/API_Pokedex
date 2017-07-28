@@ -12,6 +12,17 @@
 		<div id = "pokelab">
 		</div>
 		<div id = "pokedex">
+			<h1 class = "poke"> Bulbasaur <h1>
+			<img id = "dex" src='http://pokeapi.co/media/img/1.png'>
+			<h2> Types <h2>
+			<ul>
+				<li class = "Type_1">poison</li>
+				<li class = "Type_2">grass</li>
+			</ul>
+			<h2>Height</h2>
+			<p class = "height"> 7 </p>
+			<h2>Weight</h2>
+			<p class = "weight">69</p>
 		</div>
 		<script>
 			function poke(){
@@ -25,12 +36,27 @@
 			$("img").click(function(){
 
 				var x = $(this).attr("id");
+				var y = $(this).attr("src");
 
-
+				$("#dex").attr("src", y);
+// ADD A SHOW DISPLAY HERE
 				$.get("http://pokeapi.co/api/v1/pokemon/" +x+ "/", function(res) {
-                    console.log(res);
-                }, "json");
+						console.log(res);
+	                    $(".poke").text(res.name);
+	                   	$(".Type_1").text(res.types[0].name);
+	                   	$(".Type_2").show();	
+	                	if(res.types[1] === undefined){
+	                		$(".Type_2").css("display","none");
+	                	}else{
+	                		$(".Type_2").text(res.types[1].name);
+	                	}
+	                	$(".height").text(res.height);
+	                	$(".weight").text(res.weight);
+                	}
 
+                , "json");
+
+				// $(".poke").text();
 			});	
         </script>
 	</body>

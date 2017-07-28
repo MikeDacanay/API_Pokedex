@@ -10,3 +10,19 @@
 	position: fixed;
 	margin-top: 220px;
 }
+
+#pokedex img {
+    margin-left: 40px;
+    padding-top: 74px;
+/*    display: none;*/
+}
+li {
+	font-weight: normal;
+	font-size: 56%;
+}
+.none {
+	display: none;
+}
+.display {
+	display: block;
+}
